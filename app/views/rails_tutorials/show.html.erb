@@ -1,0 +1,40 @@
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-2 fw-bold"><p>First Name:</p></div>
+    <div class="col-1"><%= @rails_tutorial.first_name%></div>
+  </div>
+
+  <div class="row">
+    <div class="col-2 fw-bold"><p>Last Name:</p></div>
+    <div class="col-1"><%= @rails_tutorial.last_name%></div>
+  </div>
+
+  <div class="row">
+    <div class="col-2 fw-bold"><p>Email:</p></div>
+    <div class="col-1"><%= @rails_tutorial.email%></div>
+  </div>
+
+  <div class="row">
+    <div class="col-2 fw-bold"><p>Phone Number:</p></div>
+    <div class="col-1"><%= @rails_tutorial.phone%></div>
+  </div>
+
+  <div class="row">
+    <div class="col-2 fw-bold"><p>Twitter:</p></div>
+    <div class="col-1"><%= @rails_tutorial.twitter%></div>
+  </div>
+</div>
+
+
+<div>
+  <%if @rails_tutorial.user==current_user%>
+  <%= link_to "Edit this rails tutorial", edit_rails_tutorial_path(@rails_tutorial), class:"btn btn-secondary" %>
+  <%end%>
+  <%= link_to "Back to rails tutorials", rails_tutorials_path, class:"btn btn-secondary" %>
+  <br><br>
+  <%if @rails_tutorial.user==current_user%>
+  <%= button_to "Destroy this rails tutorial", @rails_tutorial, method: :delete, class:"btn btn-danger" %>
+  <%end%>
+</div>
+</div>
